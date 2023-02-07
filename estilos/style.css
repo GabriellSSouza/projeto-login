@@ -30,7 +30,6 @@ main{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
     overflow: hidden;
 
     background-color: white;
@@ -38,7 +37,8 @@ main{
     height: 515px;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.450);
-
+    
+    transform: translate(-50%,-50%); /* transform e transition por ultimo*/
     transition: width 0.3s, height 0.3s;
     transition-timing-function: ease;
 }
@@ -52,6 +52,7 @@ main{
 }
 
 #login > #formulario{
+    display: block;
     padding: 10px;
 }
 
@@ -66,19 +67,40 @@ main{
 
 form > .campo {
     background-color: #5f2c82;
+    border: 2px solid #5f2c82;
     display:block;
     width: 100%;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 8px;
     margin: 5px 0px;
 }
 
-.campo label{
+.campo > label{
     display: none;
 }
 
 .campo > span{
     color: white;
+    /* background-color: black; */
+    font-size: 1.9em;
+    width: 40px;
+    padding: 5px;
+}
+
+.campo > input{
+    background-color: #94cfcd;
+    font-size: 1em;
+    width: calc(100% - 45px); 
+    height: 100%;
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+    transform: translateY(-10px); /* tem que estar na ultima linha*/
+}
+
+.campo > input:focus-within{
+    background-color: white;
+    border: none;
 }
 
 form > input[type=submit]{
@@ -86,7 +108,7 @@ form > input[type=submit]{
     font-size: 1em;
     width: 100%;
     height: 40px;
-    background-color: #49a09d;
+    background-color: #53aaa7;
     color: white;
     border: none;
     border-radius: 5px;
@@ -103,6 +125,8 @@ form > .botao {
     font-size: 1em;
     width: 100%;
     height: 40px;
+    padding-top: 5px;
+    margin-top: 5px;
     background-color: white;
     color: #2d6462;
     border: 1px solid #49a09d;
@@ -114,6 +138,6 @@ form > .botao:hover{
     background-color: #6cd3cf;
 }
 
-form > .botao > i {
+form > .botao > span {
     font-size: 0.8em;
 }
